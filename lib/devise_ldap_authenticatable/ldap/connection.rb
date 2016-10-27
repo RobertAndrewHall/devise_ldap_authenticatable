@@ -16,7 +16,7 @@ module Devise
         if ldap_config["ssl"]
           ldap_options[:encryption] = {
             method: ldap_config["ssl"],
-            tls_options: OpenSSL::SSL::SSLContext::DEFAULT_PARAMS.merge(ciphers: 'RC4-MD5', verify_mode: nil)
+            tls_options: OpenSSL::SSL::SSLContext::DEFAULT_PARAMS.merge(verify_mode: nil)
           }
         end
         self.ldap_config = ldap_config
